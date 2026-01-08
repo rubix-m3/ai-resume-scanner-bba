@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import pdfplumber, docx, os, json, re
 from datetime import datetime
@@ -163,11 +163,12 @@ def score_resume(text, required_skills, experience):
 # ================= ROUTES =================
 @app.route("/")
 def home():
-    return app.send_static_file("index.html")
+    return send_from_directory("static", "index.html")
+
 
 @app.route("/admin")
 def admin():
-    return app.send_static_file("admin.html")
+    return app.send_static_file("static", "admin.html")
 
 @app.route("/history")
 def history():
@@ -273,6 +274,7 @@ def rank():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
