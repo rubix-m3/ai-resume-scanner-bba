@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Scanner</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Resume Scanner</h1>
+  <p class="subtitle">NLP Skill Extraction</p>
+
+  <form id="form" enctype="multipart/form-data">
+    <input type="file" id="resumeFile" name="resumes" accept=".pdf,.docx" required>
+
+    <input type="text" name="skills" placeholder="Required skills (comma separated)" required>
+    <input type="number" name="experience" placeholder="Experience (years)" required>
+    <button type="submit">Analyze</button>
+  </form>
+
+  <div id="loader" class="loader hidden"></div>
+
+  <div id="output" class="hidden">
+    <div id="domainBadge" class="domain-badge hidden"></div>
+
+    <h2 id="decision"></h2>
+    <p class="score" id="score"></p>
+
+    <p><b>Matched skills:</b> <span id="matched"></span></p>
+    <p><b>NLP detected:</b> <span id="l3"></span></p>
+  </div>
+
+  <a href="/admin" class="admin-link">Admin Dashboard →</a>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
