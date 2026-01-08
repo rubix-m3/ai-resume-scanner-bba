@@ -168,11 +168,16 @@ def home():
 
 @app.route("/admin")
 def admin():
-    return app.send_static_file("static", "admin.html")
+    return send_from_directory("static", "admin.html")
+
 
 @app.route("/history")
 def history():
-    return jsonify(load_history())
+    try:
+        return jsonify(load_history())
+    except Exception as e:
+        return jsonify([])
+
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
@@ -274,6 +279,7 @@ def rank():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
