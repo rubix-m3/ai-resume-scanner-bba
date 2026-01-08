@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Admin Dashboard</h1>
+  <table id="table">
+    <tr>
+      <th>Resume</th>
+      <th>Score</th>
+      <th>Decision</th>
+      <th>Date</th>
+    </tr>
+  </table>
+</div>
+
+<script>
+fetch("/history")
+  .then(res => res.json())
+  .then(data => {
+    const t = document.getElementById("table");
+    data.forEach(d => {
+      const r = t.insertRow();
+      r.innerHTML = `
+        <td>${d.resume}</td>
+        <td>${d.score}%</td>
+        <td>${d.decision}</td>
+        <td>${d.date}</td>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>
