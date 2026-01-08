@@ -1,0 +1,83 @@
+body {
+  background:#020617;
+  color:#e5e7eb;
+  font-family:Segoe UI,Arial;
+}
+
+.container {
+  max-width:420px;
+  margin:60px auto;
+  padding:26px;
+  background:#0f172a;
+  border-radius:14px;
+}
+
+h1 { text-align:center; color:#38bdf8; }
+.subtitle { text-align:center; color:#94a3b8; margin-bottom:20px; }
+
+form {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+input,button {
+  padding:12px;
+  border-radius:8px;
+  border:none;
+}
+
+button {
+  background:#38bdf8;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.hidden { display:none; }
+
+.domain-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Domain colors */
+.domain-badge.technology { background: #0ea5e9; }
+.domain-badge.business { background: #22c55e; }
+.domain-badge.finance { background: #f59e0b; }
+.domain-badge.science { background: #8b5cf6; }
+.domain-badge.cyber_forensics { background: #ef4444; }
+
+.loader {
+  width:32px;
+  height:32px;
+  border:4px solid #1e293b;
+  border-top:4px solid #38bdf8;
+  border-radius:50%;
+  margin:20px auto;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.admin-link {
+  display:block;
+  text-align:center;
+  margin-top:20px;
+  color:#38bdf8;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td {
+  padding:10px;
+  border-bottom:1px solid #1e293b;
+}
